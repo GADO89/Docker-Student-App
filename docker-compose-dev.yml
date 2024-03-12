@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  student:
+#    container_name: student-con
+    tty: true
+    build:
+      context: .
+      target: DEVELOPMENT
+    volumes:
+      - .:/student:ro
+    ports:
+      - "9090:9090"
+    environment:
+      - PORT=9090
+      - PHASE_TYPE=DEV
+#    env_file:
+#      - ./.env

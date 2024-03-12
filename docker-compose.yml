@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  student:
+    container_name: student-con
+    tty: true
+#    build: .
+#    volumes:
+#      - .:/student:ro
+#    ports:
+#      - "7070:7070"
+#    environment:
+#      - PORT=7070
+#      - PHASE_TYPE=PRO
+    env_file:
+      - ./.env
