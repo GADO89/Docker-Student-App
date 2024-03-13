@@ -6,7 +6,7 @@ services:
       context: .
       target: development
     volumes:
-      - \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\
+      - ./:/student:ro
     ports:
       - "9090:9090"
     environment:
@@ -21,12 +21,14 @@ services:
     image: mysql
     restart: always
     volumes:
-      - /home/user/Desktop/db:/var/lib/mysql
+      - db:/var/lib/mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: club
     ports:
       - "3307:3306"
+volumes:
+  db:
 
 
 

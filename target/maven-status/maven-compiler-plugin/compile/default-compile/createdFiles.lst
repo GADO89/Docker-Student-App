@@ -1,2 +1,3 @@
-com\spring\dockerstudentapp\DockerStudentAppApplication.class
+com\spring\dockerstudentapp\controller\Car.class
 com\spring\dockerstudentapp\controller\Student.class
+com\spring\dockerstudentapp\DockerStudentAppApplication.class
