@@ -1,17 +1,57 @@
 version: "3.9"
 services:
   student:
-#    container_name: student-con
     tty: true
     build:
       context: .
-      target: DEVELOPMENT
+      target: development
     volumes:
-      - .:/student:ro
+      - \\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\
     ports:
       - "9090:9090"
     environment:
       - PORT=9090
       - PHASE_TYPE=DEV
+      - MYSQL_HOST=mysqldb
+      - MYSQL_PORT=3306
+      - MYSQL_DB=club
+      - MYSQL_USER_NAME=root
+      - MYSQL_PASSWORD=root
+  mysqldb:
+    image: mysql
+    restart: always
+    volumes:
+      - /home/user/Desktop/db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: club
+    ports:
+      - "3307:3306"
+
+
+
+
+
+#\\wsl$\docker-desktop-data\version-pack-data\community\docker\volumes\
+#C:\Users\Username\AppData\Local\Docker\wsl\data\ext4:
+#  vhdx:
+
+#
+#
+#version: "3.9"
+#services:
+#  student:
+#    #    container_name: student-con
+#    tty: true
+#    build:
+#      context: .
+#      target: DEVELOPMENT
+#    volumes:
+#      - .:/student:ro
+#    ports:
+#      - "9090:9090"
+#    environment:
+#      - PORT=9090
+#      - PHASE_TYPE=DEV
 #    env_file:
 #      - ./.env
